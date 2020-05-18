@@ -2,17 +2,20 @@ version: '2'
 services:
   db:
     image: postgres:9.4.5
+    container_name: e-commerce-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
   backend:
-    build: backend/.
+    image: alayahamza/e-commerce-back
+    container_name: e-commerce-backend
     ports: 
       - "8080:8080"
     depends_on:
       - db
   frontend:
-    build: frontend/.
+    image: alayahamza/e-commerce-front
+    container_name: e-commerce-frontend
     ports: 
       - "80:80"
     depends_on: 
