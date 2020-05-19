@@ -4,7 +4,7 @@ services:
     image: postgres:9.4.5
     container_name: e-commerce-db
     volumes: 
-      - db-data:/var/lib/postgresql/data
+      - "db-data":"/var/lib/postgresql/data"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
@@ -22,5 +22,3 @@ services:
       - "80:80"
     depends_on: 
       - backend
-volumes:
-  db-data:
