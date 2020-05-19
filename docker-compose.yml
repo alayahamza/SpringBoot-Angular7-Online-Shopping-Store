@@ -4,7 +4,7 @@ services:
     image: postgres:9.4.5
     container_name: e-commerce-db
     volumes: 
-      - $PWD/db_data:/var/lib/postgresql/data
+      - $PWD/db_data:/var/
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
